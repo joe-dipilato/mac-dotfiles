@@ -1,0 +1,5 @@
+fzf
+bat
+delta
+eza
+bash
