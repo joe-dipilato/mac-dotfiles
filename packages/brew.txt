@@ -9,3 +9,10 @@ font-meslo-for-powerlevel10k
 font-awesome-terminal-fonts
 font-fontawesome
 font-meslo-lg-nerd-font
+font-symbols-only-nerd-font
+font-fira-code-nerd-font
+font-powerline-symbols
+font-material-icons
+font-material-design-icons-webfont
+font-material-symbols
+font-devicons
