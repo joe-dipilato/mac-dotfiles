@@ -4,6 +4,6 @@ git-delta
 eza
 bash
 font-jetbrains-mono-nerd-font
-font-fira-mono-nerd-font
 font-meslo-for-powerlevel10k
 font-fira-code-nerd-font
+font-source-code-pro

@@ -146,7 +146,25 @@ export SNYK_TOKEN=$(pass snyk/account/active | yq '.token')
 export PCT_ENV=staging
 export THREAD_SLACK_MESSAGES=True
 
-# function set_win_title(){
+# Colors
+bold="1"
+dimmed="2"
+italic="3"
+underline="4"
+red="31"
+green="32"
+yellow="33"
+blue="34"
+purple="35"
+white="37"
+dark_gray="90"
+export EZA_COLORS="gr=${white}:gw=${white}:gx=${white}:ur=${white}:uw=${white}:ux=${white}:ue=${green}:tr=${white}:tw=${red}:tx=${white}:uu=${white}:gu=${white}:gn=38;5;52;${dimmed}:gR=38;5;52:uR=38;5;52:nb=38;5;193:nk=38;5;155:nm=38;5;184:ng=38;5;124;${bold}:nt=${red};${bold}:ex=38;5;154:fi=${white}:vi=${purple}:bu=38;5;166:di=${blue};1:ln=38;5;51:lp=${white};${italic}:xa=${red}:bO=${underline};${bold}:da=${blue}:sc=38;5;117:cr=38;5;88:do=${yellow}:im=${purple}:lo=${purple}:co=${green};${bold};${dimmed}:cm=${dark_gray}:tm=${dark_gray}:mu=${purple}"
+
+# alias
+alias ls="eza --color=always --git --icons=always -r -g -t modified"
+alias lstree="ls --tree --level 3"
+
+# function set_win_title(){q
 #     echo -ne "\033]0; - $USER - \007"
 # }
 # precmd_functions+=(set_win_title)
