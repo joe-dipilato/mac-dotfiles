@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-REPO_DIR=$(mktemp -d -t mac-dotfiles-XXXXXXXXXX)
-git clone --depth=1 git@github.com:joe-dipilato/mac-dotfiles.git "${REPO_DIR}"
-source "${REPO_DIR}"/install.sh
-rm -rf "${REPO_DIR}"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+"${SCRIPT_DIR}"/brew_install.sh
+"${SCRIPT_DIR}"/custom_install.sh
