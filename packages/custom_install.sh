@@ -10,7 +10,3 @@ if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
 else
     echo "powerlevel10k already installed"
 fi
-
-# https://github.com/romkatv/powerlevel10k
-# p10k configure
-# ~/.p10k.zsh
