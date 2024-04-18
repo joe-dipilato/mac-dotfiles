@@ -4,5 +4,6 @@ IFS=$'\n' read -d '' -r -a PACKAGES < "${SCRIPT_DIR}/brew.txt"
 echo "================================================================================"
 echo "${PACKAGES[@]}"
 echo "================================================================================"
+brew tap homebrew/cask-fonts
 brew install --dry-run "${PACKAGES[@]}"
 brew install "${PACKAGES[@]}"
