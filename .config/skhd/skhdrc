@@ -86,7 +86,6 @@ cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d
 
 # cat /tmp/skhd_$USER.err.log
 
-# -- Changing Window Focus --
 # change window focus within space
 alt - up : yabai -m window --focus north
 alt - down : yabai -m window --focus south
@@ -96,16 +95,8 @@ alt - right : yabai -m window --focus east
 alt - delete : yabai -m display --focus west
 alt - pagedown : yabai -m display --focus east
 
-
-# -- Modifying the Layout --
-
-# flip
-shift + alt - y : yabai -m space --mirror y-axis
-shift + alt - x : yabai -m space --mirror x-axis
 # toggle window float
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
-
-# -- Modifying Window Size --
 
 # maximize a window
 shift + alt - m : yabai -m window --toggle zoom-fullscreen
@@ -113,19 +104,14 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 shift + alt - e : yabai -m space --balance
 
 # -- Moving Windows Around --
-# swap windows
-# shift + alt - down : yabai -m window --swap south
-# shift + alt - up : yabai -m window --swap north
-# shift + alt - left : yabai -m window --swap west
-# shift + alt - right : yabai -m window --swap east
 # move window and split
-# ctrl + alt - down : yabai -m window --warp south
-# ctrl + alt - up : yabai -m window --warp north
-# ctrl + alt - left : yabai -m window --warp west
-# ctrl + alt - right : yabai -m window --warp east
+ctrl + alt - down : yabai -m window --warp south
+ctrl + alt - up : yabai -m window --warp north
+ctrl + alt - left : yabai -m window --warp west
+ctrl + alt - right : yabai -m window --warp east
 # move window to display left and right
-# shift + alt - left : yabai -m window --display west; yabai -m display --focus west;
-# shift + alt - right : yabai -m window --display east; yabai -m display --focus east;
+ctrl + alt - delete : yabai -m window --display west; yabai -m display --focus west;
+ctrl + alt - pagedown : yabai -m window --display east; yabai -m display --focus east;
 
 # move window to prev and next space
 # shift + alt - p : yabai -m window --space prev;
@@ -137,12 +123,7 @@ shift + alt - e : yabai -m space --balance
 
 # -- Starting/Stopping/Restarting Yabai --
 # stop/start/restart yabai
-# ctrl + alt - q : brew services stop yabai
-# ctrl + alt - s : brew services start yabai
-# ctrl + alt - r : brew services restart yabai
+cmd + shift - e : yabai --restart-service
 cmd + shift - r : skhd --restart-service
 
-cmd + shift - t : yabai -m window --toggle expose
-cmd + shift - y : yabai -m window --toggle float
-cmd + shift - u : yabai -m window --toggle expose
-cmd + shift - i : yabai -m window --toggle expose
+cmd + shift - f : yabai -m window --toggle float
