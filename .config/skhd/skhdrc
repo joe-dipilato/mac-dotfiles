@@ -86,14 +86,28 @@ cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d
 
 # cat /tmp/skhd_$USER.err.log
 
-# change window focus within space
+# focus window within space
 alt - up : yabai -m window --focus north
 alt - down : yabai -m window --focus south
-alt - left : yabai -m window --focus west
-alt - right : yabai -m window --focus east
-# change focus between external displays (left and right)
-alt - delete : yabai -m display --focus west
-alt - pagedown : yabai -m display --focus east
+alt - left :  yabai -m display --focus west; yabai -m window --focus west;  
+alt - right : yabai -m display --focus east; yabai -m window --focus east;  
+alt - delete : yabai -m window --focus west
+alt - pagedown : yabai -m window --focus east
+
+# move window and split
+ctrl - down : yabai -m window --warp south
+ctrl - up : yabai -m window --warp north
+ctrl - left : yabai -m window --display west; yabai -m display --focus west;
+ctrl - right : yabai -m window --display east; yabai -m display --focus east;
+ctrl - delete : yabai -m window --warp west
+ctrl - pagedown : yabai -m window --warp east
+
+
+ctrl + alt - down : yabai -m window --toggle float --grid 16:16:1:1:14:14;
+ctrl + alt - up : yabai -m window --toggle float --grid 64:64:1:1:62:62;
+ctrl + alt - left :  yabai -m window --move rel:0:-3000 --grid 64:64:1:1:62:62;
+ctrl + alt - right : yabai -m window --move rel:0:3000 --grid 64:64:1:1:62:62;
+ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle window float
 shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
@@ -103,15 +117,9 @@ shift + alt - m : yabai -m window --toggle zoom-fullscreen
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
 
-# -- Moving Windows Around --
-# move window and split
-ctrl + alt - down : yabai -m window --warp south
-ctrl + alt - up : yabai -m window --warp north
-ctrl + alt - left : yabai -m window --warp west
-ctrl + alt - right : yabai -m window --warp east
-# move window to display left and right
-ctrl + alt - delete : yabai -m window --display west; yabai -m display --focus west;
-ctrl + alt - pagedown : yabai -m window --display east; yabai -m display --focus east;
+
+# cmd + alt - delete : yabai -m window --toggle float; yabai -m window --display west; yabai -m display --focus west;
+# cmd + alt - pagedown : yabai -m window --toggle float; yabai -m window --display west; yabai -m display --focus west;
 
 # move window to prev and next space
 # shift + alt - p : yabai -m window --space prev;
