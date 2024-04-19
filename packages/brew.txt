@@ -2,7 +2,7 @@ fzf
 bat
 git-delta
 eza
-bash
+kitty
 font-jetbrains-mono-nerd-font
 font-meslo-for-powerlevel10k
 font-fira-code-nerd-font

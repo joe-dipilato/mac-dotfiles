@@ -1,5 +1,5 @@
 {
-    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono', 'FiraCode Nerd Font Mono', 'Source Code Pro', 'MesloLGS NF', monospace",    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'JetBrainsMono Nerd Font Mono' , 'Source Code Pro', 'MesloLGS NF', monospace",    "terminal.integrated.enableMultiLinePasteWarning": false,
     "editor.rulers": [
         120
     ],
