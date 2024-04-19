@@ -103,10 +103,8 @@ ctrl - delete : yabai -m window --warp west
 ctrl - pagedown : yabai -m window --warp east
 
 
-ctrl + alt - down : yabai -m window --toggle float --grid 16:16:1:1:14:14;
 ctrl + alt - up : yabai -m window --toggle float --grid 64:64:1:1:62:62;
-ctrl + alt - left :  yabai -m window --move rel:0:-3000 --grid 64:64:1:1:62:62;
-ctrl + alt - right : yabai -m window --move rel:0:3000 --grid 64:64:1:1:62:62;
+ctrl + alt - down : yabai -m window --toggle float --grid 16:16:1:1:14:14;
 ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle window float
