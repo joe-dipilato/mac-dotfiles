@@ -5,5 +5,6 @@ echo "==========================================================================
 echo "${PACKAGES[@]}"
 echo "================================================================================"
 brew tap homebrew/cask-fonts
+brew tap FelixKratz/formulae
 brew install --dry-run "${PACKAGES[@]}"
 brew install "${PACKAGES[@]}"
