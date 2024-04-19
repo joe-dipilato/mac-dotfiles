@@ -97,14 +97,15 @@ alt - pagedown : yabai -m window --focus east
 # move window and split
 ctrl - down : yabai -m window --warp south
 ctrl - up : yabai -m window --warp north
-ctrl - left : yabai -m window --display west; yabai -m display --focus west;
-ctrl - right : yabai -m window --display east; yabai -m display --focus east;
-ctrl - delete : yabai -m window --warp west
-ctrl - pagedown : yabai -m window --warp east
+ctrl - left : yabai -m window --warp west
+ctrl - right : yabai -m window --warp east
 
 
 ctrl + alt - up : yabai -m window --toggle float --grid 64:64:1:1:62:62;
-ctrl + alt - down : yabai -m window --toggle float --grid 16:16:1:1:14:14;
+ctrl + alt - down : yabai -m window --toggle float --grid 4:4:1:1:2:2;
+ctrl + alt - left : yabai -m window --display west; yabai -m display --focus west;
+ctrl + alt - right : yabai -m window --display east; yabai -m display --focus east;
+
 ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # toggle window float
