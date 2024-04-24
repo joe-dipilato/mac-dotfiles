@@ -122,8 +122,8 @@ ctrl + shift - down : yabai -m window --warp south
 # ctrl + shift - 1 : movetoworkspace, 1
 # ctrl + shift - 2 : movetoworkspace, 2
 # ctrl + shift - 3 : movetoworkspace, 3
-ctrl + cmd - right : yabai -m window --display east
-ctrl + cmd - left : yabai -m window --display west
+ctrl + cmd - right : yabai -m window --display east; yabai -m display --focus east;
+ctrl + cmd - left : yabai -m window --display west; yabai -m display --focus west;
 
 
 
