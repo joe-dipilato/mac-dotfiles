@@ -90,6 +90,11 @@ ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -
 # ctrl - v : workspace, name:vscode
 # ctrl - 1 : workspace, 1
 # ctrl - 2 : workspace, 2
+ctrl - v : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Code") | .id' | head -1)"
+ctrl - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .id' | head -1)" --toggle float --grid 64:64:1:1:62:62;
+# ctrl - y : yabai -m rule --apply app="^$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .app' | head -1)$" manage=off
+
+
 
 ########################################
 # CURRENT WORKSPACE
@@ -124,7 +129,6 @@ ctrl + shift - down : yabai -m window --warp south
 # ctrl + shift - 3 : movetoworkspace, 3
 ctrl + cmd - right : yabai -m window --display east; yabai -m display --focus east;
 ctrl + cmd - left : yabai -m window --display west; yabai -m display --focus west;
-
 
 
 # CHANGE WORKSPACE
