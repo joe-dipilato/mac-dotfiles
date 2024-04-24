@@ -96,17 +96,17 @@ ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -
 ########################################
 
 # CHANGE WINDOW FOCUS
-# ctrl - left, movefocus, l
-# ctrl - right, movefocus, r
-# ctrl - up, movefocus, u
-# ctrl - down, movefocus, d
+ctrl - left : yabai -m window --focus west
+ctrl - right : yabai -m window --focus east
+ctrl - up : yabai -m window --focus north
+ctrl - down : yabai -m window --focus south
 
 # MOVE WINDOW
-# ctrl + shift - left, movewindow, l
-# ctrl + shift - right, movewindow, r
-# ctrl + shift - up, movewindow, u
-# ctrl + shift - down, movewindow, d
-# ctrl + shift - Z, togglesplit
+ctrl + shift - left : yabai -m window --warp west
+ctrl + shift - right : yabai -m window --warp east
+ctrl + shift - up : yabai -m window --warp north
+ctrl + shift - down : yabai -m window --warp south
+# ctrl + shift - z : togglesplit
 
 # RESIZE WINDOW
 # ctrlAltShft, h, resizeactive, -20 0
@@ -122,17 +122,16 @@ ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -
 # ctrl + shift - 1 : movetoworkspace, 1
 # ctrl + shift - 2 : movetoworkspace, 2
 # ctrl + shift - 3 : movetoworkspace, 3
-# ctrl + cmd - right, movetoworkspace, r+1
-# ctrl + cmd - left, movetoworkspace, r-1
+ctrl + cmd - right : yabai -m window --display east
+ctrl + cmd - left : yabai -m window --display west
+
+
 
 # CHANGE WORKSPACE
 # ctrl + mouse_down : workspace, e+1
 # ctrl + mouse_up : workspace, e-1
-# ctrl + alt - right, workspace, r+1
-# ctrl + alt - left, workspace, r-1
-
-
-
+ctrl + alt - right : yabai -m display --focus east
+ctrl + alt - left : yabai -m display --focus west
 
 # # focus window within space
 # alt - up : yabai -m window --focus north
