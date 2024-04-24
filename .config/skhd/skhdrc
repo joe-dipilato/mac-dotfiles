@@ -78,43 +78,91 @@
 #    "terminal"
 # ]
 
-# open terminal, blazingly fast compared to iTerm/Hyper
-cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-
-
-# [ cmd | ctrl | alt ]
+# [ CTRL | (X)  | ALT ]
+# ---------------------
+# [ cmd  | ctrl | alt ]
 
 # cat /tmp/skhd_$USER.err.log
 
-# focus window within space
-alt - up : yabai -m window --focus north
-alt - down : yabai -m window --focus south
-alt - left :  yabai -m display --focus west; yabai -m window --focus west;  
-alt - right : yabai -m display --focus east; yabai -m window --focus east;  
-alt - delete : yabai -m window --focus west
-alt - pagedown : yabai -m window --focus east
+# ctrl - b : browser
+# ctrl - t : terminal
+ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# ctrl - v : workspace, name:vscode
+# ctrl - 1 : workspace, 1
+# ctrl - 2 : workspace, 2
 
-# move window and split
-ctrl - down : yabai -m window --warp south
-ctrl - up : yabai -m window --warp north
-ctrl - left : yabai -m window --warp west
-ctrl - right : yabai -m window --warp east
+########################################
+# CURRENT WORKSPACE
+########################################
+
+# CHANGE WINDOW FOCUS
+# ctrl - left, movefocus, l
+# ctrl - right, movefocus, r
+# ctrl - up, movefocus, u
+# ctrl - down, movefocus, d
+
+# MOVE WINDOW
+# ctrl + shift - left, movewindow, l
+# ctrl + shift - right, movewindow, r
+# ctrl + shift - up, movewindow, u
+# ctrl + shift - down, movewindow, d
+# ctrl + shift - Z, togglesplit
+
+# RESIZE WINDOW
+# ctrlAltShft, h, resizeactive, -20 0
+# ctrlAltShft, l, resizeactive, 20 0
+# ctrlAltShft, k, resizeactive, 0 -20
+# ctrlAltShft, j, resizeactive, 0 20
+
+########################################
+# BETWEEN WORKSPACES
+########################################
+
+# MOVE WINDOW TO WORKSPACE
+# ctrl + shift - 1 : movetoworkspace, 1
+# ctrl + shift - 2 : movetoworkspace, 2
+# ctrl + shift - 3 : movetoworkspace, 3
+# ctrl + cmd - right, movetoworkspace, r+1
+# ctrl + cmd - left, movetoworkspace, r-1
+
+# CHANGE WORKSPACE
+# ctrl + mouse_down : workspace, e+1
+# ctrl + mouse_up : workspace, e-1
+# ctrl + alt - right, workspace, r+1
+# ctrl + alt - left, workspace, r-1
 
 
-ctrl + alt - up : yabai -m window --toggle float --grid 64:64:1:1:62:62;
-ctrl + alt - down : yabai -m window --toggle float --grid 4:4:1:1:2:2;
-ctrl + alt - left : yabai -m window --display west; yabai -m display --focus west;
-ctrl + alt - right : yabai -m window --display east; yabai -m display --focus east;
 
-ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
-# toggle window float
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# # focus window within space
+# alt - up : yabai -m window --focus north
+# alt - down : yabai -m window --focus south
+# alt - left :  yabai -m display --focus west; yabai -m window --focus west;  
+# alt - right : yabai -m display --focus east; yabai -m window --focus east;  
+# alt - delete : yabai -m window --focus west
+# alt - pagedown : yabai -m window --focus east
 
-# maximize a window
-shift + alt - m : yabai -m window --toggle zoom-fullscreen
-# balance out tree of windows (resize to occupy same area)
-shift + alt - e : yabai -m space --balance
+# # move window and split
+# ctrl - down : yabai -m window --warp south
+# ctrl - up : yabai -m window --warp north
+# ctrl - left : yabai -m window --warp west
+# ctrl - right : yabai -m window --warp east
+
+
+# ctrl + alt - up : yabai -m window --toggle float --grid 64:64:1:1:62:62;
+# ctrl + alt - down : yabai -m window --toggle float --grid 4:4:1:1:2:2;
+# ctrl + alt - left : yabai -m window --display west; yabai -m display --focus west;
+# ctrl + alt - right : yabai -m window --display east; yabai -m display --focus east;
+
+# ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# # toggle window float
+# shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# # maximize a window
+# shift + alt - m : yabai -m window --toggle zoom-fullscreen
+# # balance out tree of windows (resize to occupy same area)
+# shift + alt - e : yabai -m space --balance
 
 
 # cmd + alt - delete : yabai -m window --toggle float; yabai -m window --display west; yabai -m display --focus west;
