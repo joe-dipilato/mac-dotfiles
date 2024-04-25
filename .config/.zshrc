@@ -165,6 +165,24 @@ export EZA_COLORS="gr=${white}:gw=${white}:gx=${white}:ur=${white}:uw=${white}:u
 alias ls="eza --color=always --git --icons=always -r -g -t modified"
 alias lstree="ls --tree --level 3"
 
+function get_build_variant() {
+  local task_name="${1}"
+  local last_path=${PWD}
+  cd ~/mms/ || return
+  evergreen evaluate .evergreen.yml | yq '.buildvariants | .[] | select(.tasks[].name == "'"${task_name}"'") | .name'
+  cd "${last_path}" || return
+}
+
+function evg_patch() {
+  local task_name="${1}"
+  local build_varaint
+  local last_path=${PWD}
+  build_varaint=$(get_build_variant "${task_name}")
+  cd ~/mms/ || return
+  evergreen patch -p mms -d "$(git log -1 --pretty='%B' | tr '\n' ' ')" -y --browse -u -f --variants "${build_varaint}" --tasks "${task_name}"
+  cd "${last_path}" || return
+}
+
 # function set_win_title(){q
 #     echo -ne "\033]0; - $USER - \007"
 # }
