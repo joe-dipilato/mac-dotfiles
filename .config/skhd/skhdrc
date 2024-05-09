@@ -82,18 +82,35 @@
 # ---------------------
 # [ cmd  | ctrl | alt ]
 
+# Do not remap terminal control characters: see stty -a
+# cchars: discard = ^O; dsusp = ^Y; eof = ^D; eol = <undef>;
+# 	eol2 = <undef>; erase = ^?; intr = ^C; kill = ^U; lnext = ^V;
+# 	min = 1; quit = ^\; reprint = ^R; start = ^Q; status = ^T;
+# 	stop = ^S; susp = ^Z; time = 0; werase = ^W;
+
 # cat /tmp/skhd_$USER.err.log
 
 # ctrl - b : browser
 # ctrl - t : terminal
-ctrl - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+ctrl + alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 # ctrl - v : workspace, name:vscode
 # ctrl - 1 : workspace, 1
 # ctrl - 2 : workspace, 2
-ctrl - v : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Code") | .id' | head -1)"
-ctrl - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .id' | head -1)" --toggle float --grid 64:64:1:1:62:62;
 # ctrl - y : yabai -m rule --apply app="^$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .app' | head -1)$" manage=off
 
+ctrl + alt - v : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Code") | .id' | head -1)"; yabai -m window --display 3
+ctrl + alt - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .id' | head -1)"; yabai -m window --display 3
+ctrl + alt - c : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "kitty") | .id' | head -1)"; yabai -m window --display 3
+ctrl + alt - x : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Slack") | .id' | head -1)"; yabai -m window --display 3
+
+ctrl + shift - v : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Code") | .id' | head -1)"; yabai -m window --display 1
+ctrl + shift - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .id' | head -1)" ; yabai -m window --display 1
+ctrl + shift - c : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "kitty") | .id' | head -1)"; yabai -m window --display 1
+ctrl + shift - x : yabai -m window --focus "$(yabai -m query --windows | jq '.[] | select(.app == "Slack") | .id' | head -1)"; yabai -m window --display 1
+
+ctrl + alt - f : yabai -m window --toggle float;
+
+# ctrl - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | select(.app == "Google Chrome") | .id' | head -1)" --toggle float --grid 64:64:1:1:62:62; yabai -m window --display 3
 
 
 ########################################
@@ -101,16 +118,16 @@ ctrl - b : yabai -m window --focus "$(yabai -m query --windows | jq -r '.[] | se
 ########################################
 
 # CHANGE WINDOW FOCUS
-ctrl - left : yabai -m window --focus west
-ctrl - right : yabai -m window --focus east
-ctrl - up : yabai -m window --focus north
-ctrl - down : yabai -m window --focus south
+# ctrl - left : yabai -m window --focus west
+# ctrl - right : yabai -m window --focus east
+# ctrl - up : yabai -m window --focus north
+# ctrl - down : yabai -m window --focus south
 
 # MOVE WINDOW
-ctrl + shift - left : yabai -m window --warp west
-ctrl + shift - right : yabai -m window --warp east
-ctrl + shift - up : yabai -m window --warp north
-ctrl + shift - down : yabai -m window --warp south
+# ctrl + shift - left : yabai -m window --warp west
+# ctrl + shift - right : yabai -m window --warp east
+# ctrl + shift - up : yabai -m window --warp north
+# ctrl + shift - down : yabai -m window --warp south
 # ctrl + shift - z : togglesplit
 
 # RESIZE WINDOW
@@ -127,15 +144,15 @@ ctrl + shift - down : yabai -m window --warp south
 # ctrl + shift - 1 : movetoworkspace, 1
 # ctrl + shift - 2 : movetoworkspace, 2
 # ctrl + shift - 3 : movetoworkspace, 3
-ctrl + cmd - right : yabai -m window --display east; yabai -m display --focus east;
-ctrl + cmd - left : yabai -m window --display west; yabai -m display --focus west;
+# ctrl + cmd - right : yabai -m window --display east; yabai -m display --focus east;
+# ctrl + cmd - left : yabai -m window --display west; yabai -m display --focus west;
 
 
 # CHANGE WORKSPACE
 # ctrl + mouse_down : workspace, e+1
 # ctrl + mouse_up : workspace, e-1
-ctrl + alt - right : yabai -m display --focus east
-ctrl + alt - left : yabai -m display --focus west
+# ctrl + alt - right : yabai -m display --focus east
+# ctrl + alt - left : yabai -m display --focus west
 
 # # focus window within space
 # alt - up : yabai -m window --focus north
@@ -184,4 +201,4 @@ ctrl + alt - left : yabai -m display --focus west
 cmd + shift - e : yabai --restart-service
 cmd + shift - r : skhd --restart-service
 
-cmd + shift - f : yabai -m window --toggle float
+# cmd + shift - f : yabai -m window --toggle float
